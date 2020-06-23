@@ -53,7 +53,7 @@ function popupOpen(){
     
     event.preventDefault();
     popup.style.display = 'block';
-    popup.style.top = `${event.clientY}px`;
+    popup.style.top = `${pageYOffset + 100}px`;
     popupOverlay.style.display = 'block';
 }
 function popupClose(){
@@ -62,7 +62,8 @@ function popupClose(){
     popupOverlay.style.display = 'none';
 }
 function submitForm(){
+    event.preventDefault();
     popup.style.display = 'none';
     popupSuccess.style.display = 'block';
-    popupSuccess.style.top = `${event.clientY}px`;
+    popupSuccess.style.top = `${pageYOffset+ 100}px`;
 }
