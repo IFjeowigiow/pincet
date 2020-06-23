@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pincet</title>
+    <meta description="Студия депиляции и массажный кабинет в Бресте">
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/animate.css">
+    <link rel="stylesheet" href="./css/style.min.css">
+</head>
+<body>
+
+    <div class="header-wrap">
+        <div class="scene">
+            <div data-speed="40" class="layer layer-1"></div>
+            <div data-speed="80" class="layer layer-2"></div>
+        </div>
+            
+        <div class="container">
+            <header class="header">
+                <div class="header-top">
+                    <div class="header-logo">
+                        <img src="./img/logo.png" alt="" class="header-logo__img">
+                        <p class="header-logo__description">Студия депиляции и массажный кабинет в&nbsp;Бресте</p>
+                    </div>
+                    <div class="header-info">
+                        <div class="header-info__address">
+                            <img src="./img/map.jpg" class="info-address__map">
+                            <div class="info-address-block">
+                                <p class="info-address-block__title">Мы находимся в центре:</p>
+                                <p class="info-address-block__address">г. Брест, ул. Гоголя, д.65</p>
+                                <a href="#" onclick="event.preventDefault()" class="info-address-block__link">Смотреть на карте</a>
+                                <div class="container-map" id="map">
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="header-info__work">
+                            <div class="work-phone">
+                                <div class="icon-wrap">
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="15" height="15" viewBox="0 0 15 15">
+                                        <image width="15" height="15" xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAAB3klEQVQokW2STYiPURTGf/P2Nk1JPhaKaRQWxiSFMpNiY4OSj4yN8pEUsZGlMuSfshCyEZup2fjKSNQsJkpjITU1GKEQyoiEMU3ynvM+uuO86M9TT917T+fc55znNPzo7ycwAxgHxviDqcAw8BS4AFwCVEUzJJAOIg0iDSO1x1viF6TZSMeQtiENIM2q4rnMdwE7gMXAXOAK0AncBybF+z1gLbAbuAusBN6l5BqwFPgY7IwCi4DJwCFgAbA/pBPxFbnMmlKVv/p8BHwHpgGvgDXAQqB3os1fBTYCW3IVxfuQ+zJk3gYuR2KFx8Am4CbQB5wADucq7CqwHegCmoEW4Aj/Iil6AiwDBoDWhrHunpnAINAGfAZ6gDfRaz1S4U9h6ZRM5iMyPyfz0zJH5vtkvl7me+NesVXm32Q+HvevmcyQ2XGZtclsp8xGZbZaZntkdkpmjTI7I7NemT2UWXvkTPiclBXAZuBOyLqRrADOAiPAUNjZAVwHNqQ9qJITXgPrYqLTge4Y5LyYQfogObEVuAjMz/HfyQlpj9P2XANWAQeAF3VDew40Ak2Z3KnjW7kvl/szuQ/JvSb3ORFrkXuf3I/KfTSTl/yHhbysycslcb4lLz/Iywfy8qS8PC8v+QmLg0ffDkCn8gAAAABJRU5ErkJggg=="/>
+                                    </svg>
+                                </div>
+                                <div class="info-work-block">
+                                    <p class="info-work-block__preview">Звоните, мы сейчас работаем</p>
+                                    <a href="tel:+375333822499" class="info-work-block__number">+375 33 382 24 99</a>
+                                </div>
+                            </div>
+                            <div class="work-phone">
+                                <div class="icon-wrap">
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="15" height="15" viewBox="0 0 15 15">
+                                        <image width="15" height="15" xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAABsklEQVQokX2Tz4vNYRjFP/ferx9lIaQGzUIpC27dsmHBGMlKFmZDamgWysbKHyAp2VkpiymNZtCUleWgS1NsmBjKLKwsRopRiuZ5j6N35p265otTp759n+e87+l5zttYnJqiB+uAHcAHoA28Ar4DL4F7wG1gcaW9iU1hB/s19hz2euwt2C3s99i7sW9hz2K3VzRNJ+GkjpO6TtrupPNO+ln+Z15zUr+Thp201UnTTmrnWuWktcDkkgs4Crygjl/AHWAGeAo8APZUTmkE2AVcAGaBS8BYTb6MN8DFUj/XdMRpR3xyxKgjdjriuiNmHDHgCP7CCUd8zLrKkfYBD4EoNx8DxoHLtXuXIeAJcKJyxAZgvqf4COiUA44AP2py+AJszAP7CvStKs4XB/uB5zUpbAYW8sByAA4BFZBW2ZuuyaAFHM4Bynu+76RtTjrbs9v/8UzZ+93Gwo2ba8oKsvWD5ftfyJHtAp+BvU2kQBpCaiA9QxpBqpDoYe4bRuoitZBOZl3lXIS3wIGSnFHgCvC4THUTMAj0A3PAUOmnsnLylvAuW8nJAU4Bx4vwW3ldV/94VcBvX30o9AwOwagAAAAASUVORK5CYII="/>
+                                      </svg>   
+                                </div>                               
+                                <div class="info-work-block">
+                                    <p class="info-work-block__time">Пн-Вс <span class="current-time-work">9:00-21:00</span></p>
+                                </div>
+                            </div>                                
+                        </div>
+                        <a href="#" onclick="popupOpen(event)" class="header-info__book">
+                            <svg class="calendar-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="20" viewBox="0 0 20 20">
+                            <image width="20" height="20" xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAACXUlEQVQ4ja2UT4jNURTHP+/5NY2aNCILfwqzkNg8DRtZ0Kh5TbEfjQ31UsakxMafkdQUGmnK5N+GlbKwEM9MLGaSZ6OIFKGMP2mUeNGYe+7VeXPUdee9hfKt072/c+85v3PO95yb+zU6SoLHwDjQG6nvAZ+A7kh3BVgFbIzNM0LQdSGwHVgKrAbmAv3RvXXA10S3BWgFjgETwE1gMjdVLheAEWBBGuo/4guwNY/4YcS3IL4H8W2I/474EcSviOQ94iuJrmL6NrNVH8NZEL8BuA5cs4DOAS+At1GAQ8C3RHcBWAa8NukEdmRBRA9/RhcP18l0YJZmhpQYkzOkzDj8b8gH50ikLzjXabpCcO5EcE7vzQnODQTn1trZtuBcKbXPByck0hOcFE3XHpzsCU6ag5N5wUkpOCnYWVdw0p3aZ+o1QXv0edFE8QOYH52VErtXwHNlOXW4GKgaq03AEuBNcmcl0GGNrR1x1zphqB4p4yY7gf3ASTOs1kiEMzaWuchmwsZy7E/bxNhlc6u4aqlU7Vud7QP0AThtZdBJOw7cAdbXS/l+tP8A3IjS7DVn2sSHgCM2sg+BBzrr+VrKf8slRPaarguR24g0IdKBSA6RU4gIIosQaUbkKCJPEBlFpFgvwkZoNf1HW9/ZesA64TPQkuFnOdwd7W+ZYGwqNgNPrZ6XgWlgCtgEvMyC91rwNcZa7XFsAG0NZVMJ0Jo9sjdSmT8LLNe6aoT6lz678KyBswpw3lpD2VQClBxNUyNTZ2VgMAs+HDQjbZd4SmJoBupwTFvDXu6i1kzTNMYHgenfvwRiN4qD320AAAAASUVORK5CYII="/>
+                          </svg>
+                          Записаться онлайн</a>
+                          <button class="toggle-menu" onclick="showMenu()">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                          </button>
+                    </div>
+                </div>
+                <nav class="nav">
+                    <ul class="nav-bar">
+                        <li class="nav-bar-item"><a href="" class="nav-bar-item__link active-menu-link">Главная</a></li>
+                        <li class="nav-bar-item"><a href="" class="nav-bar-item__link">Шугаринг и депиляция воском</a></li>
+                        <li class="nav-bar-item"><a href="" class="nav-bar-item__link">Антицеллюлитный массаж</a></li>
+                        <li class="nav-bar-item"><a href="" class="nav-bar-item__link">Классический массаж</a></li>
+                        <li class="nav-bar-item"><a href="" class="nav-bar-item__link">Обучение</a></li>
+                        <li class="nav-bar-item"><a href="" class="nav-bar-item__link">Косметика для мастеров</a></li>
+                        <li class="nav-bar-item"><a href="" class="nav-bar-item__link">Статьи</a></li>
+                        <li class="nav-bar-item"><a href="" class="nav-bar-item__link">О студии</a></li>
+                        <li class="nav-bar-item"><a href="" class="nav-bar-item__link">Контакты</a></li>
+                    </ul>
+                </nav>
+            </header>
+        </div>
+        <div class="main-content-wrap">
+            <div class="container">
+                <main class="main">
+                    <div class="main-content">
+                        <h1 class="main-content__title"><span class="text-thin d-block">Хотите избавиться от</span>
+                            нежелательных волос
+                        <span class="text-thin d-block">или нужен сеанс</span> 
+                            антицеллюлитного массажа?</h1>
+                        <div class="main-content-block-wrap">
+                            <div class="main-content-block-features">
+                                <ul class="main-content-list">
+                                    <li class="main-content-list__item">депиляция воском и Шугаринг;</li>
+                                    <li class="main-content-list__item">профессиональные сертифицированные мастера;</li>
+                                    <li class="main-content-list__item">работаем и с женщинами, и с мужчинами;</li>
+                                    <li class="main-content-list__item">результат уже после первой процедуры.</li>
+                                </ul>
+                                <a href="#" onclick="popupOpen(event)" class="main-content__button"><span class="main-content__button-text"> Получить карту клиента бесплатно</span></a>
+                            </div>
+                            <div class="main-content-block-card">
+                                <div class="main-content-block-card__img"></div>
+                                <div data-speed="30" class="layer layer-3"></div>
+                                <div class="card-block-icon"></div>
+                                <p class="card-block-hover-text">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+                                </p>
+                            </img>
+                        </div>
+                    </div>
+                </main>
+            </div>
+            <div class="wave">
+                <div class="wave-img"></div>
+                <a href="#s1" onclick="scrollToSection(event)" class="wave-arrow-wrap">
+                    <svg class="wave-arrow" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="11" height="7" viewBox="0 0 11 7">
+                        <image width="11" height="7" xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAHCAYAAADebrddAAAAj0lEQVQYlXXKsarBcRzG4edwI2cw+ltcgElSFkyms7gBk+tRZJFk4exnsrkCNnXYlME5Rd/6kdT/s7zD+3xkWTbGAjP59dAu4IQJajm0jhH2gQeYY4nKG6ymb4ph4Bu+sMEanwmWsMIP+uECR1d0cMA3yml36OIv0ANHZzRRxBb/aOHyAK84+kUj4djj88Ed/kAeVaDDcdwAAAAASUVORK5CYII="/>
+                      </svg>
+                </a>
+            </div>
+            
+        </div>
+       
+    </div>
+    <section class="section" id="section">
+        Секция для прокрутки и посмотреть на паралакс
+    </section>
+    <div class="popup-overlay" onclick="popupClose()">
+    </div>
+    <div class="popup">
+        <h2 class="popup-title">Получите <span class="text-thin">программу обучения</span></h2>
+        <p class="popup-descr">Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+            Adipisci laborum nulla vero autem quod reprehenderit, voluptatem, quidem numquam optio quas esse eveniet 
+            dolorum voluptatibus voluptates recusandae exercitationem! Debitis, nisi consectetur.</p>
+        <form action="" class="popup-form" onsubmit="return submitForm(event);">
+            <select name="" id="" class="input input-select popup-input" required>
+                <option value="" disabled selected hidden>Интересующая тема</option>
+                <option value="1">Повышение квалификации</option>
+                <option value="2">Массаж</option>
+                <option value="3">Шугаринг</option>
+                <option value="4">Косметика</option>
+                <option value="5">Другое</option>
+            </select>
+            <input type="text" placeholder="Ваше имя" class="input popup-input" required>
+            <input type="text" placeholder="Ваш номер телефона" class="input input-phone popup-input" required>
+            <button type="submit"  class="main-content__button popup-button"><span class="popup-button-text">Получить программу</span></button>
+        </form>
+        <div class="close-btn" onclick="popupClose()">
+            <span class="close-btn__item"></span>
+            <span class="close-btn__item"></span>
+        </div>
+    </div>
+    <div class="popup-success">
+        <img src="./img/check.png" alt="" class="popup-success-check">
+        <p class="popup-success__title">Ваш заказ принят.</p>
+        <p class="popup-succes__descr">Ожидайте звонка</p>
+        <div class="close-btn" onclick="popupClose()">
+            <span class="close-btn__item"></span>
+            <span class="close-btn__item"></span>
+        </div>
+    </div>
+    <script src="https://api-maps.yandex.ru/2.0/?load=package.standard&amp;lang=ru-RU&amp;apikey=<ваш API-ключ>" type="text/javascript"></script>
+    <script src="https://unpkg.com/imask"></script>
+    <script src="./js/main.js"></script>
+</body>
+</html>
